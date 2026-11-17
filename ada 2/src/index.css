@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Impact", "Haettenschweiler", "Arial Narrow Bold", "Oswald", sans-serif;
+  --color-rust: #e07a2e;
+  --color-rustdeep: #a8481a;
+  --color-cream: #f1e7d0;
+}
+
+html, body, #root { height: 100%; margin: 0; overflow: hidden; background: #0b0d0e; color: #f1e7d0; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; user-select: none; -webkit-user-select: none; }
+#game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+
+.panel { background: linear-gradient(180deg, rgba(34,31,27,.86), rgba(15,15,14,.9)); border: 1px solid rgba(224,122,46,.32); box-shadow: 0 10px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,220,170,.08); backdrop-filter: blur(8px); }
+.panel-soft { background: rgba(14,14,13,.62); border: 1px solid rgba(255,230,190,.12); backdrop-filter: blur(5px); }
+.btn { font-family: var(--font-display); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: transform .12s, background .15s, box-shadow .15s, filter .15s; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(1.12); }
+.btn:active:not(:disabled) { transform: translateY(1px); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn-primary { background: linear-gradient(180deg, #f08a3a, #b9521b); color: #1a0f08; border: 1px solid #ffb06a; box-shadow: 0 4px 18px rgba(224,122,46,.35); }
+.btn-ghost { background: rgba(30,28,25,.75); color: #f1e7d0; border: 1px solid rgba(241,231,208,.28); }
+.btn-ghost:hover:not(:disabled) { background: rgba(60,50,40,.85); border-color: rgba(224,122,46,.7); }
+.title-text { font-family: var(--font-display); letter-spacing: .06em; text-shadow: 0 3px 0 #7a2f0e, 0 8px 30px rgba(0,0,0,.7); }
+.scroll-thin::-webkit-scrollbar { width: 8px; } .scroll-thin::-webkit-scrollbar-thumb { background: rgba(224,122,46,.45); border-radius: 8px; } .scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes raidPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .78; transform: scale(1.05); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popStar { 0% { transform: scale(0) rotate(-40deg); opacity: 0; } 70% { transform: scale(1.35) rotate(8deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
+@keyframes hitX { 0% { transform: translate(-50%,-50%) scale(1.6); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1); opacity: 0; } }
+.anim-fadeup { animation: fadeUp .5s ease both; } .anim-fadein { animation: fadeIn .6s ease both; } .anim-slide { animation: slideIn .3s ease both; }
+
+input[type="range"] { accent-color: #e07a2e; }
